@@ -8,7 +8,7 @@ import urllib3
 sys.path.append('../')
 from models import Subs
 
-token = '724383512:AAFlLv7rbwC-DC_Bcr_abdkWCK1SZA4vkmU'
+token = 'TOKEN"
 
 start_text="""
     Привет, я буду напоминать тебе о всех олипиадах, дедлайнах регистрауии, подачи заявок на проектные конкурсы и тд.
