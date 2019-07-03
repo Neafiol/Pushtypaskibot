@@ -106,6 +106,7 @@ if __name__ == '__main__':
     #bot.send_message(445330281, "123")
     while (True):
         try:
+            print("Postupashki Bor running")
             bot.polling(none_stop=True)
         except:
             print("Error")

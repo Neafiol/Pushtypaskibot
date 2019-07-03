@@ -47,6 +47,7 @@ def sent_to_tg(text, url,tel_id):
     bot.send_message(tel_id, "Привет, завтра олимпиада: \n"+text, reply_markup=keyboard)
 
 if __name__ == '__main__':
+    print("Parsing running")
     while (True):
         pars()
         sleep(60*60*24)
