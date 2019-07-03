@@ -3,4 +3,8 @@
 
 Демка: @Postupaskibot
 
-<img src="https://files.catbox.moe/d9vkn2.jpg"/>
+<p>
+<img src="https://files.catbox.moe/d9vkn2.jpg" width="120"/>
+<img src="https://files.catbox.moe/u1v5fs.jpg" width="120"/>
+
+<p/>
