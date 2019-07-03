@@ -4,9 +4,9 @@ import telebot
 from telebot import types
 import sys
 import os
-import requests
+import urllib3
 sys.path.append('../')
-from Postupashky.models import Subs
+from models import Subs
 
 token = '724383512:AAFlLv7rbwC-DC_Bcr_abdkWCK1SZA4vkmU'
 
@@ -22,13 +22,10 @@ bot = telebot.TeleBot(token)
 
 # from T_bot.models import Subscriber
 def log(txt):
-    try:
-        print(txt)
-        file = open("../log.txt", "a")
-        file.write(txt + '\n')
-        file.close()
-    except:
-        1
+    print(txt)
+    file = open("../log.txt", "a")
+    file.write(txt + '\n')
+    file.close()
 
 
 
@@ -40,20 +37,23 @@ def repeat_all_messages(message):  # Название функции не игр
         user.save()
         bot.send_message(message.chat.id, start_text)
 
-        requests.get(
-            "https://alarmerbot.ru/?key=754bbe-fe8dcd-e68fa9&message=" + 'New: ' + str(message.from_user.first_name))
-
-        markup = types.InlineKeyboardMarkup()
-        less_text = ['Математика', 'Информатика', 'Физика', 'Экономика', 'Биология', 'Химия']
-
-        for i in range(6):
-            button = types.InlineKeyboardButton(text=less_text[i], callback_data=str(i))
-            markup.add(button)
-
-        bot.send_message(message.chat.id, "Выбери интересующие тебя предметы", reply_markup=markup)
+        http = urllib3.PoolManager()
+        http.request('GET', "https://alarmerbot.ru/?key=754bbe-fe8dcd-e68fa9&message="+'Вступил: '+str(message.from_user.first_name))
 
     else:
         bot.send_message(message.chat.id, restart_text)
+
+
+    markup = types.InlineKeyboardMarkup()
+    less_text = ['Математика', 'Информатика', 'Физика', 'Экономика', 'Биология', 'Химия']
+
+    for i in range(6):
+        button = types.InlineKeyboardButton(text=less_text[i], callback_data=str(i))
+        markup.add(button)
+
+
+    bot.send_message(message.chat.id, "Выбери интересующие тебя предметы", reply_markup=markup)
+
 
 
 
