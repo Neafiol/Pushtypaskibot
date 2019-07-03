@@ -4,7 +4,7 @@
 Демка: @Postupaskibot
 
 <p>
-<img src="https://files.catbox.moe/d9vkn2.jpg" width="120"/>
-<img src="https://files.catbox.moe/u1v5fs.jpg" width="120"/>
+<img src="https://files.catbox.moe/d9vkn2.jpg" width="320"/>
+<img src="https://files.catbox.moe/u1v5fs.jpg" width="320"/>
 
 <p/>
